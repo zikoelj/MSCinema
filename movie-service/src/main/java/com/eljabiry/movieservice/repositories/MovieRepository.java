@@ -5,11 +5,9 @@ import com.eljabiry.movieservice.entities.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface MovieRepository extends JpaRepository<Movie,Long> {
     @Query("Select new com.eljabiry.movieservice.dtos.MovieResponseDto(m.movieId, m.movieName, m.description, m.duration," +
             "m.releaseDate, m.isDisplay, c.categoryId, c.categoryName, i.imageUrl, m.movieTrailerUrl, d.directorName" +
